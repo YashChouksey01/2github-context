@@ -1,0 +1,14 @@
+name: git-hub
+on: workflow_dispatch
+jobs:
+  git-context1:
+    runs-on: ubuntu-slim
+    steps:
+      - name: context info
+        run: echo '${{ toJson(github)}}'
+        
+  issue:
+    runs-on: ubuntu-slim
+    steps:
+      - name: context info further
+        run: '${{ toJson(github.event) }}'
